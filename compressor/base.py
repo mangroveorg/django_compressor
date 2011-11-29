@@ -147,7 +147,7 @@ class Compressor(object):
                 options = dict(options, filename=value)
                 value = self.get_filecontent(value, charset)
 
-            if self.all_mimetypes:
+            if attribs.get('type') in self.all_mimetypes:
                 precompiled, value = self.precompile(value, **options)
 
             if enabled:
